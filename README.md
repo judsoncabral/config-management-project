@@ -1,2 +1,9 @@
 # config-management-project
- # ContaBancaria
+
+## Version 1.0.0
+
+### Adicionado:
+
+- Tranferência;
+- Crédito;
+- Débito.
