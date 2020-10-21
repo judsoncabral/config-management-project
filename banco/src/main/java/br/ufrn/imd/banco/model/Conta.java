@@ -3,6 +3,8 @@ import java.util.Random;
 
 public class Conta {
 
+	private static long contaId = 1;
+	
 	private long id;
 	
 	private Agencia agencia;
@@ -13,7 +15,8 @@ public class Conta {
 	
 	public Conta() {
 		super();
-		this.id = gerador.nextLong();
+		this.id = Conta.contaId;
+		Conta.contaId++;
 		this.agencia = new Agencia();
 		this.saldo = 0.0;
 	}

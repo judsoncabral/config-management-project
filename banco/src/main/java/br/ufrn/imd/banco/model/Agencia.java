@@ -3,6 +3,8 @@ package br.ufrn.imd.banco.model;
 import java.util.Random;
 
 public class Agencia {
+	
+	private static long agenciaId = 1;
 
 	private long id;
 	
@@ -12,7 +14,8 @@ public class Agencia {
 	
 	public Agencia() {
 		super();
-		this.id = gerador.nextLong(); 
+		this.id = Agencia.agenciaId; 
+		Agencia.agenciaId++;
 		this.numero = gerador.nextDouble();
 	}
 	public long getId() {
