@@ -1,4 +1,4 @@
-package br.ufrn.imd.banco.controllers;
+package br.ufrn.imd.banco.controller;
 import br.ufrn.imd.banco.helper.ObjetoExistenteException;
 import br.ufrn.imd.banco.helper.ObjetoInexistenteException;
 import br.ufrn.imd.banco.helper.ObjetoVazioException;
