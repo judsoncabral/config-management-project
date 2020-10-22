@@ -1,60 +1,59 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+    <v-app-bar app color="deep-purple darken-1" dark>
+      <div class="app-title d-flex align-center">
+        <v-icon large>
+          mdi-wallet-plus
+        </v-icon>
+        <h1>NuBanco</h1>
       </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <ContaCard
+        v-for="conta in contas"
+        :key="conta.id"
+        :id="conta.id"
+        :agency="conta.agencia.id"
+        :saldo="conta.saldo"
+        @fetchContas="fetchContas"
+      ></ContaCard>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import ContaCard from "./components/ContaCard";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    HelloWorld,
+    ContaCard,
   },
 
   data: () => ({
-    //
+    contas: [],
   }),
+  mounted() {
+    this.fetchContas();
+  },
+  methods: {
+    async fetchContas() {
+      const result = await fetch("http://localhost:8080/contas");
+      const contas = await result.json();
+      this.contas = contas;
+    },
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.app-title {
+  width: 100%;
+  h1 {
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+</style>
