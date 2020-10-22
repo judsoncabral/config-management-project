@@ -7,7 +7,7 @@ import br.ufrn.imd.banco.model.Conta;
 
 public class ContaRepository {
 	public static void populate() {
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 5; i++) {
 			ContaRepository.contas.add(new Conta());
 		}
 	}
