@@ -1,13 +1,13 @@
 <template>
   <v-container>
-    <v-card elevation="2" outlined>
+    <v-card elevation="2" outlined style="max-width: 600px; margin: 0 auto;">
       <v-col class="fill-height">
         <v-card-title>
           <h2>Conta: {{ id }}</h2>
         </v-card-title>
         <v-card-text>
           <p>Agência: {{ agency }}</p>
-          <p>Saldo: {{ saldo }}</p>
+          <p>Saldo: R${{ saldo }},00</p>
         </v-card-text>
       </v-col>
       <v-col>
