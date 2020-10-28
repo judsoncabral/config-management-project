@@ -16,6 +16,7 @@
         :id="conta.id"
         :agency="conta.agencia.id"
         :saldo="conta.saldo"
+        :saldoBonus="conta.saldoBonus"
         @fetchContas="fetchContas"
       ></ContaCard>
     </v-main>

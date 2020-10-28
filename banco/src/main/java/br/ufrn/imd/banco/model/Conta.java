@@ -1,5 +1,5 @@
 package br.ufrn.imd.banco.model;
-import java.util.Random;
+
 
 public class Conta {
 
@@ -10,8 +10,9 @@ public class Conta {
 	private Agencia agencia;
 
 	private Double saldo;
-	
-	private Random gerador = new Random();
+
+	private Double saldoBonus;
+
 	
 	public Conta() {
 		super();
@@ -19,6 +20,7 @@ public class Conta {
 		Conta.contaId++;
 		this.agencia = new Agencia();
 		this.saldo = 0.0;
+		this.saldoBonus = 0.0;
 	}
 
 
@@ -48,6 +50,15 @@ public class Conta {
 
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
+	}
+
+	public Double getSaldoBonus() {
+		return saldoBonus;
+	}
+
+
+	public void setSaldoBonus(Double saldoBonus) {
+		this.saldoBonus = saldoBonus;
 	}
 	
 }
