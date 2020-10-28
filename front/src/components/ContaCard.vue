@@ -51,7 +51,7 @@
       <v-col>
         <v-card-actions>
           <v-btn color="deep-purple darken-1" text>
-            Creditar
+            Depositar
           </v-btn>
 
           <v-spacer></v-spacer>
