@@ -10,7 +10,9 @@ public class Conta {
 	private Agencia agencia;
 
 	private Double saldo;
-	
+
+	private Double saldoBonus;
+
 	private Random gerador = new Random();
 	
 	public Conta() {
@@ -19,6 +21,7 @@ public class Conta {
 		Conta.contaId++;
 		this.agencia = new Agencia();
 		this.saldo = 0.0;
+		this.saldoBonus = 0.0;
 	}
 
 
@@ -46,8 +49,17 @@ public class Conta {
 	}
 
 
-	public void setSaldo(Double saldo) {
+	public void setSaldo(Double saldoBonus) {
 		this.saldo = saldo;
+	}
+
+	public Double getSaldoBonus() {
+		return saldoBonus;
+	}
+
+
+	public void setSaldoBonus(Double saldoBonus) {
+		this.saldoBonus = saldoBonus;
 	}
 	
 }
