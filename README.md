@@ -1,5 +1,15 @@
 # config-management-project
 
+## Version 3.0.0
+
+### Adicionado 
+
+- Saldo bônus
+
+### Corrigido
+
+- De Creditar para Depositar
+
 ## Version 2.0.0
 
 ### Adicionado
