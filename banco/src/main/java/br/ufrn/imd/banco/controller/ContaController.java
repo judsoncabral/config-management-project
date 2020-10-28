@@ -63,6 +63,7 @@ public class ContaController {
 			Conta conta = ContaRepository.findById(creditarDTO.getContaId());
 			if (conta != null) {
 				conta.setSaldo(conta.getSaldo() + creditarDTO.getValorParaCreditar());
+				conta.setSaldoBonus(conta.getSaldoBonus()+creditarDTO.getValorParaCreditar()/100);
 				ContaRepository.alterar(conta);
 				return ResponseEntity.ok(conta);
 			}

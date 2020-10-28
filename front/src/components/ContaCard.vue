@@ -8,6 +8,7 @@
         <v-card-text>
           <p>Agência: {{ agency }}</p>
           <p>Saldo: R${{ saldo }},00</p>
+          <p>Saldo Bonus: R${{ saldoBonus }},00</p>
         </v-card-text>
       </v-col>
       <v-col>
@@ -151,6 +152,7 @@ export default {
     id: Number,
     agency: Number,
     saldo: Number,
+    saldoBonus: Number,
   },
   methods: {
     openTransferir() {
